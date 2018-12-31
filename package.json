@@ -1,6 +1,6 @@
 {
   "name": "wx2tt",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "微信小程序转头条小程序工具",
   "main": "src/index.js",
   "scripts": {
@@ -14,11 +14,15 @@
       "pre-push": "npm run lint"
     }
   },
+  "bin": {
+    "wx2tt": "./bin/wx2tt"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dream2023/wx2tt.git"
   },
   "keywords": [
+    "miniapp",
     "微信小程序",
     "小程序",
     "头条小程序",
@@ -34,7 +38,6 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "chalk": "^2.4.1",
-    "commander": "^2.19.0",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",

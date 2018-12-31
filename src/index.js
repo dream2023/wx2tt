@@ -7,7 +7,9 @@ const makeDir = require('make-dir')
 // 检测参数
 const argv = process.argv.slice(2)
 if (argv.length < 2) {
-  utils.error('用法: wx2tt path/wxapp path/ttapp [...]')
+  utils.error(
+    '用法: wx2tt <path/to/wxapp> <path/to/ttapp> [--watch] [--minify] [--minify-wxss] [--minify-js] [--minify-wxml]'
+  )
 }
 
 const cwd = process.cwd()
