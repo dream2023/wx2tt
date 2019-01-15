@@ -38,6 +38,8 @@ gulp.task('wxss', function() {
           extname: '.ttss'
         })
       )
+      // 引入文件后缀
+      .pipe($.replace('.wxss', '.ttss'))
       // 缓存(watch模式下)
       .pipe($.if(argv.watch, $.remember('wxss')))
       // 压缩
