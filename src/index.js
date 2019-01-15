@@ -1,6 +1,7 @@
 const path = require('path')
 const shell = require('shelljs')
 const isDirectory = require('is-directory')
+const isAbsolute = require('is-absolute')
 const utils = require('./utils')
 const makeDir = require('make-dir')
 
@@ -12,9 +13,16 @@ if (argv.length < 2) {
   )
 }
 
+let src = argv[0]
+let dest = argv[1]
 const cwd = process.cwd()
-const src = path.join(cwd, argv[0])
-const dest = path.join(cwd, argv[1])
+if (!isAbsolute(src)) {
+  src = path.join(cwd, src)
+}
+
+if (!isAbsolute(dest)) {
+  dest = path.join(cwd, dest)
+}
 
 if (!isDirectory.sync(src)) {
   utils.error('参数错误：[' + src + '] 不是目录')
